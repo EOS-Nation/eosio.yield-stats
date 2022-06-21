@@ -2,7 +2,6 @@ import * as jsonl from "node-jsonl";
 import * as fs from "fs";
 import * as path from "path";
 import * as glob from "glob";
-import { writer } from "repl";
 
 const filepaths = glob.sync(path.join(__dirname, "..", "data", "*.jsonl"));
 
