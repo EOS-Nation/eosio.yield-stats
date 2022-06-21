@@ -12,7 +12,7 @@ const exclude_filter_expr = ''
 
 // JSON Line writer
 if ( !fs.existsSync("data") ) fs.mkdirSync("data");
-const writer = fs.createWriteStream(`./data/${include_filter_expr}-${start_block_num}-${stop_block_num}.jsonl`);
+const writer = fs.createWriteStream(`./data/${contracts.join("-")}_${start_block_num}-${stop_block_num}.jsonl`);
 
 function callback(block: Block) {
     const block_num = block.number;
