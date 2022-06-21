@@ -50,7 +50,7 @@ export interface Event<T> {
             const { block_num, timestamp, transactionId, name } = value;
             const { protocol, tvl, usd, period, balances, prices, rewards } = value.json;
 
-            if ( name == "updatelog") writers.updatelog.write([ block_num, timestamp, transactionId, protocol, tvl, usd, period, balances, prices].join(",") + "\n");
+            if ( name == "updatelog") writers.updatelog.write([ block_num, timestamp, transactionId, protocol, tvl, usd, period, balances.join("|"), prices.join("|")].join(",") + "\n");
             if ( name == "report") writers.report.write([ block_num, timestamp, transactionId, protocol, tvl, usd, period].join(",") + "\n");
             if ( name == "rewardslog") writers.rewardslog.write([ block_num, timestamp, transactionId, protocol, tvl, usd, period, rewards].join(",") + "\n");
         }
